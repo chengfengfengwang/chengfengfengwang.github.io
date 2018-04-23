@@ -165,8 +165,8 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p><code>git init</code> 初始化当前目录为仓库，这会生成一个.git文件夹（隐藏文件夹，git运行的文件夹）<br><code>git status</code> 获取当前项目状态<br><code>git add -A . 或者 git add filename</code>（暂存项目的全部改动，暂存某个文件）将改动放入暂存区<br><code>git commit -m &#39;message&#39;</code>将暂存区内容放入仓库 repository<br><code>git remote add origin https://github.com/try-git/try_git.git</code>远程仓库<br><code>git push -u origin master</code> 将本地仓库推送到远程仓库（仓库名为origin 分支为master）-u 会保存当前推送的参数，下次可以直接运行 git push<br><code>git pull origin master</code>从远程仓库更新内容到本地<br><code>git diff --staged</code>查看暂存区的区别<br><code>git reset a.txt</code>取消暂存a.txt文件<br><br></p>
-<ul>
+                <p><code>git init</code> 初始化当前目录为仓库，这会生成一个.git文件夹（隐藏文件夹，git运行的文件夹）<br><code>git status</code> 获取当前项目状态<br><code>git add -A . 或者 git add filename</code>（暂存项目的全部改动，暂存某个文件）将改动放入暂存区<br><code>git commit -m &#39;message&#39;</code>将暂存区内容放入仓库 repository<br><code>git remote add origin https://github.com/try-git/try_git.git</code>为当前项目添加远程仓库<br><code>git push -u origin master</code> 将本地仓库推送到远程仓库（仓库名为origin 分支为master）-u 会保存当前推送的参数，下次可以直接运行 git push<br><code>git pull origin master</code>从远程仓库更新内容到本地<br><code>git diff --staged</code>查看暂存区的区别<br><code>git reset a.txt</code>取消暂存a.txt文件<br><br></p>
+<h3 id="git-status-的不同返回状态"><a href="#git-status-的不同返回状态" class="headerlink" title="git status 的不同返回状态"></a>git status 的不同返回状态</h3><ul>
 <li><p>如果当前项目是干净的，git status 会返回如下结果</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nothing to commit (create/copy files and use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure>
 </li>
@@ -185,6 +185,13 @@
 <h3 id="暂存区和提交"><a href="#暂存区和提交" class="headerlink" title="暂存区和提交"></a>暂存区和提交</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Staging Area:</span><br><span class="line">A place where we can group files together before we &quot;commit&quot; them to Git.</span><br><span class="line"></span><br><span class="line">Commit</span><br><span class="line">A &quot;commit&quot; is a snapshot of our repository. This way if we ever need to look back at the changes we&apos;ve made (or if someone else does), we will see a nice timeline of all changes.</span><br></pre></td></tr></table></figure>
 <h3 id="查看提交日志"><a href="#查看提交日志" class="headerlink" title="查看提交日志"></a>查看提交日志</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git log --summary</span><br></pre></td></tr></table></figure>
 <h3 id="贮存"><a href="#贮存" class="headerlink" title="贮存"></a>贮存</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Use the command &apos;git stash&apos; to stash your changes, and &apos;git stash apply&apos; to re-apply your changes after your pull.</span><br></pre></td></tr></table></figure>
+<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><ul>
+<li>显示远程仓库<br><code>git remote</code>列出每个远程库的简短名字。默认为origin<br><code>git remote -v</code> 此为 –verbose 的简写，取首字母，显示对应的克隆地址：</li>
+<li>添加远程仓库<br><code>git remote add [shortname] [url]</code></li>
+<li>推送远程仓库<br><code>git push -u origin master</code> 将本地仓库推送到远程仓库（仓库名为origin 分支为master）-u 会保存当前推送的参数，下次可以直接运行 git push<br><code>git pull origin master</code>从远程仓库更新内容到本地<br><strong>推送前需要更新远程仓库</strong></li>
+</ul>
+<h3 id="git-diff-命令"><a href="#git-diff-命令" class="headerlink" title="git diff 命令"></a>git diff 命令</h3><p><code>git diff &lt;filename&gt;</code> 查看文件在工作目录与暂存区的差别<br><code>git diff --cached &lt;filename&gt;</code>查看已经 add 进暂存区但是尚未 commit 的内容差别</p>
+<h3 id="git-撤销"><a href="#git-撤销" class="headerlink" title="git 撤销"></a>git 撤销</h3><p><code>git checkout -- file</code> 撤销工作区更改</p>
 
                 <hr>
                 
@@ -229,7 +236,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#git各种状态说明"><span class="toc-text">git各种状态说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#暂存、暂存全部和取消暂存"><span class="toc-text">暂存、暂存全部和取消暂存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#暂存区和提交"><span class="toc-text">暂存区和提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看提交日志"><span class="toc-text">查看提交日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#贮存"><span class="toc-text">贮存</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-status-的不同返回状态"><span class="toc-text">git status 的不同返回状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git各种状态说明"><span class="toc-text">git各种状态说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#暂存、暂存全部和取消暂存"><span class="toc-text">暂存、暂存全部和取消暂存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#暂存区和提交"><span class="toc-text">暂存区和提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看提交日志"><span class="toc-text">查看提交日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#贮存"><span class="toc-text">贮存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程仓库"><span class="toc-text">远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-diff-命令"><span class="toc-text">git diff 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-撤销"><span class="toc-text">git 撤销</span></a></li></ol>
                 </div>
             </div>
         </div>
